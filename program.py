@@ -121,8 +121,5 @@ if __name__ == '__main__':
     Beginner_survival_point = 20
     n = len(items)
 
-    sizes  = [items[item][1] for item in items]
-    values = [items[item][2] for item in items]
-
     Optimal_Choice()
     Small_backpack()
