@@ -1,0 +1,52 @@
+# Giải pháp :
+# Thuật toán tham lam
+# Lập trình động
+        #  Tạo 1 bảng các mục và thông số của chúng
+        #  Tạo bảng M theo số, trong đó M là số mục, số là số ô
+        #  Điền vào bảng tuần tự từ từ trái sang phải và từ trên xuống dưới
+        #  Nhận giá trị tối đa từ hàng cuối cùng của bảng
+# Thuật toán di truyền
+
+
+Hướng dẫn cách làm:
+1. Hiểu bài toán:
+
+   Input: Danh sách các vật phẩm với thông tin kích thước, điểm sống sót, và các vật phẩm bắt buộc phải mang theo. Kích thước ba lô (3x3) là giới hạn, tương đương 9 ô.
+   Output: Chọn các vật phẩm để tổng điểm sống sót là cao nhất, đảm bảo các ràng buộc:
+        Mang theo vật phẩm bắt buộc (thuốc hít inhaler do Tom bị hen suyễn).
+        Không vượt quá kích thước ba lô (9 ô).
+        Điểm sống sót tổng cộng phải dương.
+
+2. Xác định phương pháp giải:
+   Đây là bài toán tối ưu hóa, tương tự bài toán "Knapsack Problem" (Bài toán cái ba lô).
+   Cần sắp xếp vật phẩm theo độ ưu tiên dựa trên tỷ lệ:
+        Ưu tiên = Điểm sống sót / Kích thước
+
+3. Các bước thực hiện:
+   Bước 1: Chuẩn bị dữ liệu. Lưu danh sách các vật phẩm vào một cấu trúc như dictionary hoặc list.
+        Mỗi vật phẩm bao gồm: tên, kích thước, điểm sống sót.
+        Đánh dấu các vật phẩm bắt buộc.
+   Bước 2: Sắp xếp các vật phẩm theo độ ưu tiên.
+        Loại trừ vật phẩm bắt buộc khỏi danh sách này (vì chúng đã được chọn trước).
+   Bước 3: Chọn vật phẩm tối ưu.
+        Duyệt qua danh sách sắp xếp.
+        Kiểm tra xem vật phẩm có thể thêm vào ba lô mà không vượt quá giới hạn kích thước.
+        Nếu có, thêm vào danh sách các vật phẩm được chọn.
+   Bước 4: Tính tổng điểm sống sót.
+        Cộng điểm của các vật phẩm đã chọn.
+        Kiểm tra nếu tổng điểm dương, xuất kết quả.
+
+4. Kết quả cần có:
+   Lưới 3x3 thể hiện các vật phẩm trong ba lô.
+   Tổng điểm sống sót.
+
+5.Kiểm tra:
+   Đảm bảo các vật phẩm bắt buộc luôn được chọn.
+   Tổng kích thước không vượt quá 9.
+   Tổng điểm sống sót dương.
+
+Gợi ý lập trình:
+        Dùng Python và xử lý với dictionary để lưu trữ thông tin vật phẩm.
+        Sử dụng hàm sắp xếp (sorted()) để sắp xếp danh sách vật phẩm theo độ ưu tiên.
+        Sử dụng vòng lặp và điều kiện để kiểm tra giới hạn kích thước.
+        Để hiển thị kết quả, xây dựng lưới bằng cách chia danh sách vật phẩm thành các hàng nhỏ (3 ô mỗi hàng).
